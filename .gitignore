@@ -1,0 +1,21 @@
+# Entorno virtual
+venv/
+
+# Archivos de Python compilados
+__pycache__/
+*.py[cod]
+
+# Archivos del sistema
+.DS_Store
+
+# Configuración de editores
+.vscode/
+
+# Archivos de exportación de bases de datos
+*.sql
+*.dump
+*.backup
+*.bak
+
+# Variables de entorno
+.env
