@@ -1,0 +1,90 @@
+:root{
+    --oscuro: #000000;
+    --blanco: #FFFFFF;
+    --primario: #FFC107;
+    --secundario: #0097A7;
+    --gris: #757575;
+    --grisClaro: #DFE9F3;
+}
+
+body{
+    font-family: 'Segoe UI', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    text-align: center;
+}
+header{
+    background-color: #2d2b6f;
+    color: white;
+    padding: 10px;
+    font-size: 25px;     
+    display: flex;
+    justify-content: center;
+    align-items: center;
+      
+}
+.logo{
+    position:relative;
+    text-align: left; 
+    max-height: 200px;
+    align-content:left;
+    padding: 10px;
+}
+.contenido-hero{
+    font-size: 20px;
+}
+.container{
+    display: flex;
+    justify-content: center;
+    align-items:end;
+    gap: 50px;
+    margin: 20px;
+    flex-wrap:nowrap;
+}
+.area{
+    background: white;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    width: 400px;
+    font-size: 17px;
+    transition: transform 0.3s ease;
+}
+.area:hover{
+    background-color:var(--grisClaro); /*Se agregó un efecto visual a la clase area (hover) que cambia el fondo y tamaño*/
+    transform: scale(1.1);
+}
+.area h2{
+    color: #3498db;
+}
+.nav-bg{
+    background-color: var(--secundario);
+}
+.navegacion_principal{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+.navegacion_principal a{
+    color: var(--blanco);
+    text-decoration:none;
+    font-size: 30px;
+    font-weight: 700;
+    padding: 16px;
+}
+.navegacion_principal a:hover{
+    background-color: var(--grisClaro);
+    color: var(--oscuro)
+}
+.sombra{
+    box-shadow: 0px 5px 15px 0px rgba(112, 112, 112, 0.48);
+    background-color: var(--blanco);
+    padding: 32px;
+    border-radius: 20px;
+}
+footer{
+    text-align: center;
+    font-size: 20px;
+    color: var(--gris);
+}

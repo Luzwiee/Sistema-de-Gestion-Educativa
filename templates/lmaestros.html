@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>UESA</title>
+  <link rel ="stylesheet" href="style.css">
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f3f4f6;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background-color:#2d2b6f ;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .logo {
+      height: 100px;
+    }
+
+    .titulo {
+      margin: 10px 0 0;
+      font-size: 2rem;
+    }
+
+    .nav-bg {
+      background-color: #0097A7;
+      padding: 10px 0;
+    }
+
+    .navegacion_principal {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+    }
+
+    .navegacion_principal a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 1.1rem;
+      transition: color 0.3s;
+    }
+
+    .navegacion_principal a:hover {
+      color: #000000;
+    }
+
+    .contenedor {
+      max-width: 900px;
+      margin: 30px auto;
+      padding: 30px;
+      background: #ffffff;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    label {
+      font-weight: bold;
+      display: block;
+      margin-top: 15px;
+      color: #2d2b6f;
+    }
+
+    input, select {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      background-color: #f9fafb;
+    }
+
+    button {
+      margin-top: 20px;
+      padding: 12px 20px;
+      background-color: #2d2b6f;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #0097A7;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 30px;
+      background: white;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+
+    th, td {
+      padding: 15px;
+      text-align: center;
+      border-bottom: 1px solid #e5e7eb;
+    }
+
+    th {
+      background-color: #caeaee;
+      color: #2d2b6f;
+      font-weight: 600;
+    }
+
+    tr:hover {
+      background-color: #f9f5ff;
+    }
+
+    footer {
+      background-color: #2d2b6f;
+      color: white;
+      text-align: center;
+      padding: 15px;
+      margin-top: 50px;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <img src="media/logo_uesar.png" width="auto" height="120px" class="logo" alt="Logo UESA">
+    <h1 class="titulo">Unidad Educativa San Agustín A</h1>
+  </header>
+
+  <div class="nav-bg">
+    <nav class="navegacion_principal">
+      <a href="index.html">Inicio</a>
+      <a href="estudiantesg.html">Estudiantes</a>
+      <a href="maestros.html">Maestros</a>
+      <a href="lestudiantes.html">Lista Estudiantes</a>
+      <a href="lmaestros.html">Lista Maestros</a>
+      <a href="notas.html">Registrar Notas</a>
+      <a href="vernotas.html">Calificaciones</a>
+    </nav>
+  </div>
+
+  <main class="contenedor">
+    
+    <h2 style="margin-top: 20px; color: #4b0082;">Lista de Maestros</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Nombre</th>
+          <th>Apellido Paterno</th>
+          <th>Apellido Materno</th>
+          <th>CI</th>
+          <th>Asignatura</th>
+        </tr>
+      </thead>
+      <tbody id="tabla-datos">
+        <!-- Los registros se insertan aquí -->
+      </tbody>
+    </table>
+  </main>
+    
+
+  </main>
+
+  <footer>
+    <p>Todos los derechos reservados and@uesa.bo</p>
+    <p>Creado por Fatima Luz Carrasco Condori</p>
+  </footer>
+
+  <script>
+  const tabla = document.getElementById('tabla-datos');
+
+  function agregarFila(maestro) {
+    const fila = document.createElement('tr');
+    fila.innerHTML = `
+      <td>${maestro.nombre}</td>
+      <td>${maestro.apP}</td>
+      <td>${maestro.apM}</td>
+      <td>${maestro.ci}</td>
+      <td>${maestro.asignatura}</td>
+    `;
+    tabla.appendChild(fila);
+  }
+
+  window.addEventListener('DOMContentLoaded', () => {
+    fetch('http://localhost:5000/ver_maestros_asignaturas')
+      .then(response => {
+        if (!response.ok) throw new Error('Error al cargar los maestros');
+        return response.json();
+      })
+      .then(data => {
+        data.maestros.forEach(agregarFila);
+      })
+      .catch(error => {
+        console.error('Error:', error.message);
+      });
+  });
+</script>
+
+  
+
+</body>
+</html>
