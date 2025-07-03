@@ -1,5 +1,4 @@
 # Proyecto Sistema Web de Gestión Educativa
-Fatima Luz Carrasco Condori
 Este es un proyecto desarrollado en Python con el framework Flask. El objetivo del proyecto es gestionar estudiantes, maestros y mostrar información académica
 
 ## 🚀 Tecnologías utilizadas
@@ -19,3 +18,5 @@ pip install -r requirements.txt
 
 - Ejecuta la aplicación:
 python app.py
+
+> *Fatima Luz Carrasco Condori.*
