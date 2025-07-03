@@ -11,7 +11,7 @@ Este es un proyecto desarrollado en Python con el framework Flask. El objetivo d
 
 ## ⚙️ Instalación
 - Crea y activa un entorno virtual:
-python -m venv venv
+python -m venv venv  //
 venv\Scripts\activate  # En Windows
 
 - Instala las dependencias:
