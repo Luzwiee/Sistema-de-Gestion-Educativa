@@ -1,5 +1,5 @@
-# Proyecto Flask - ProyectoAYD
-
+# Proyecto Sistema Web de Gestión Educativa
+Fatima Luz Carrasco Condori
 Este es un proyecto desarrollado en Python con el framework Flask. El objetivo del proyecto es gestionar estudiantes, maestros y mostrar información académica
 
 ## 🚀 Tecnologías utilizadas
